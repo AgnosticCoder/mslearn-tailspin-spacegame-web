@@ -16,20 +16,12 @@ steps:
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
     version: '$(dotnetSdkVersion)'
-<<<<<<< Updated upstream
-
-=======
   
->>>>>>> Stashed changes
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK 2.1.505 for SonarCloud'
   inputs:
     version: '2.1.505'
-<<<<<<< Updated upstream
-
-=======
   
->>>>>>> Stashed changes
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
@@ -41,7 +33,8 @@ steps:
 - task: gulp@1
   displayName: 'Run gulp tasks'
   
-- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'   displayName: 'Write build info'
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'   
+  displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
   
 - task: DotNetCoreCLI@2
@@ -55,19 +48,10 @@ steps:
   inputs:
     SonarCloud: 'SonarCloud connection 1'
     organization: '$(SonarOrganization)'
-<<<<<<< Updated upstream
-    scannerMode: 'MSBuild'
-=======
->>>>>>> Stashed changes
     projectKey: '$(SonarProjectKey)'
     projectName: '$(SonarProjectName)'
     projectVersion: '$(Build.BuildNumber)'
     extraProperties: |
-<<<<<<< Updated upstream
-      sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
-      sonar.exclusions=**/wwwroot/lib/**/*
-    
-=======
        sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
        sonar.exclusions=**/wwwroot/lib/**/*
     condition: |
@@ -78,7 +62,6 @@ steps:
         eq(variables['System.PullRequest.TargetBranch'], 'master')
       )
   
->>>>>>> Stashed changes
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
