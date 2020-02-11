@@ -1,5 +1,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=agnosticcoder-tailspin&metric=alert_status)](https://sonarcloud.io/dashboard?id=agnosticcoder-tailspin)
 
+[![Build Status](https://dev.azure.com/CertifyAz400/Scan%20your%20Code/_apis/build/status/mslearn-tailspin-spacegame-web?branchName=master)](https://dev.azure.com/CertifyAz400/Scan%20your%20Code/_build/latest?definitionId=5&branchName=master)
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
